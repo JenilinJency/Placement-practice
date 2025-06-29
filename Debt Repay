@@ -1,0 +1,25 @@
+import java.io.*;
+import java.text.DecimalFormat;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        DecimalFormat df=new DecimalFormat("0.00");
+        double principal=sc.nextDouble();
+        double rate=sc.nextDouble();
+        double years=sc.nextDouble();
+        
+        double interest=(principal*rate*years)/100;
+        double amount=principal+interest;
+        double discount=(2*interest)/100;
+        double finalSettlement=amount-discount;
+        
+        System.out.println(df.format(interest));
+        System.out.println(df.format(amount));
+        System.out.println(df.format(discount));
+        System.out.println(df.format(finalSettlement));
+    }
+        
+}
