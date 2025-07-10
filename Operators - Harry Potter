@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+
+        // Remove any + or - sign if present
+        input = input.replaceAll("[+-]", "");
+
+        // Take first and last digit
+        int firstDigit = Character.getNumericValue(input.charAt(0));
+        int lastDigit = Character.getNumericValue(input.charAt(input.length() - 1));
+
+        System.out.println(firstDigit + lastDigit);
+    }
+}
