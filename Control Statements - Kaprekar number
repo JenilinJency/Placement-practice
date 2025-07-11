@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class KaprekarCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int k = sc.nextInt();  
+        int square = k * k;   
+        String sqStr = String.valueOf(square);
+        int len = sqStr.length();
+
+        String leftPart = sqStr.substring(0, len - String.valueOf(k).length());
+        String rightPart = sqStr.substring(len - String.valueOf(k).length());
+
+        int left = (leftPart.isEmpty()) ? 0 : Integer.parseInt(leftPart);
+        int right = Integer.parseInt(rightPart);
+
+        if (left + right == k) {
+            System.out.println("Kaprekar Number");
+        } else {
+            System.out.println("Not a Kaprekar Number");
+        }
+    }
+}
